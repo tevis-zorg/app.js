@@ -9,18 +9,12 @@ const app = express();
 app.set('views' , './views_app');
 app.set('view engine' , 'ejs');
 
+//static files
+app.use(express.static('./views_app/public'));//allowing css file to be displayed from head.ejs
+
 
 // Listen for request
 app.listen(8080);
-
-app.use((req, res, next) => {
-    // it'll hang the loading
-    console.log("new request made : ");
-    console.log('host : ', req.hostname);
-    console.log('path : ', req.path);
-    console.log('method : ', req.method);
-    next(); //function to let the execution continues.
-})
 
 app.get('/' , (req, res) => {
     
