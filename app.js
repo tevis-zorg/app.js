@@ -15,12 +15,11 @@ app.listen(8080);
 
 app.use((req, res, next) => {
     // it'll hang the loading
-    //9.2.3 - 9.2.4
     console.log("new request made : ");
     console.log('host : ', req.hostname);
     console.log('path : ', req.path);
     console.log('method : ', req.method);
-    next();
+    next(); //function to let the execution continues.
 })
 
 app.get('/' , (req, res) => {
