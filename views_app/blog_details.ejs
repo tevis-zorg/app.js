@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <%- include('./partials_views_app/head.ejs') %> 
+    
+<body>
+    <%- include('./partials_views_app/nav.ejs')  %>
+    
+    <div class="blogs_detail_content">
+        <h2> 
+            <%= `${ronin_blogs.title}` %> 
+        </h2>
+        <h3>
+            By: 
+            <%= `${ronin_blogs.user_name}`%>
+        </h3>
+        <div class="blogs_content">
+            <p>
+                <%= ronin_blogs.body %> 
+            </p>
+        </div>
+        <!-- sends a request to delete data -->
+        <a class="delete" data-doc="<%= ronin_blogs.id %>"> delete </a>
+    </div>
+    
+    <%- include('./partials_views_app/footer.ejs')  %>
+
+</body>
+</html>
